@@ -8,10 +8,6 @@
     "depends": [
         "java/openjdk11"
     ],
-    "env_add_path": ".",
-    "env_set": {
-        "JAVA_HOME": "$env:SCOOP_HOME\\apps\\openjdk11\\current"
-    },
     "hash": "e699cb601810ec0cca7e4ff165f6a16e37f9450e57d35d2979fa54c40cb2f1f2",
     "url": "https://www.sheepit-renderfarm.com/media/applet/client-latest.php#/sheepit-java.jar",
     "architecture": "x86_64"
