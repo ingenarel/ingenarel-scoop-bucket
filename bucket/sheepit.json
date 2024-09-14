@@ -4,5 +4,10 @@
     "homepage": "https://www.sheepit-renderfarm.com/home",
     "license": "GNU General Public License",
     "notes": "We render your projects and you render ours.",
-    "bin": "sheepit-autoupdate.exe"
+    "bin": "sheepit-autoupdate.exe",
+    "architecture": {
+        "64bit": {
+            "url": "https://www.sheepit-renderfarm.com/media/applet/client-binary-latest.php",
+        },
+    },
 }
