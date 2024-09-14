@@ -32,7 +32,7 @@ jobs:
         shell: powershell
         run: |
           $env:SCOOP_HOME="$(Convert-Path '.\scoop_core')"
-          .\ingenarel-scoop-bucket\bin\test.ps1
+          .\bin\test.ps1
   test_pwsh:
     name: PowerShell
     runs-on: windows-latest
@@ -56,4 +56,4 @@ jobs:
         shell: pwsh
         run: |
           $env:SCOOP_HOME="$(Convert-Path '.\scoop_core')"
-          .\ingenarel-scoop-bucket\bin\test.ps1
+          .\bin\test.ps1
