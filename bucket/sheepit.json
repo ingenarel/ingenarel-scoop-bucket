@@ -1,0 +1,8 @@
+{
+    "version": "7.24244.0",
+    "description": "SheepIt is a free distributed renderfarm for Blender",
+    "homepage": "https://www.sheepit-renderfarm.com/home",
+    "license": "GNU General Public License",
+    "notes": "We render your projects and you render ours.",
+    "bin": "sheepit-autoupdate.exe"
+}
