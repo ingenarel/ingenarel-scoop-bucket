@@ -5,7 +5,7 @@
     "license": "GNU General Public License",
     "notes": "We render your projects and you render ours.",
     "bin": "sheepit-autoupdate.exe",
-    "hash": "2201c0df9d22ea898e934c0a24dad5f08b6fb0d951b3c542d670c69a6e0cdd6d"
+    "hash": "2201c0df9d22ea898e934c0a24dad5f08b6fb0d951b3c542d670c69a6e0cdd6d",
     "url": "https://www.sheepit-renderfarm.com/media/applet/client-binary-latest.php",
     "architecture": "x86_64"
 }
