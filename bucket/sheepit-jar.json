@@ -3,7 +3,7 @@
     "description": "SheepIt is a free distributed renderfarm for Blender",
     "homepage": "https://www.sheepit-renderfarm.com/home",
     "license": "GNU General Public License",
-    "notes": "This is the jar file.",
+    "notes": "This is the jar file.\nTo run this, just do sheepit-jar in the terminal",
     "bin": "sheepit-java.jar",
     "depends": [
         "java/openjdk11"
