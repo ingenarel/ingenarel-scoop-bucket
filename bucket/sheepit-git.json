@@ -9,7 +9,7 @@
     "extract_dir": "client-master",
     "depends": [
         "java/openjdk11",
-        "main/gradle-bin"
+        "gradle-bin",
     ],
     "pre_install": [
         "cd $dir",
