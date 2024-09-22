@@ -6,7 +6,7 @@
   "notes": "This is the git version.\nRun this with discordo-git",
   "url": "https://github.com/ayn2op/discordo/archive/refs/heads/main.zip",
   "hash": "5452011bd0998ecba3a8ffe589d1df897725c4085b11800b4addc187c89f6c67",
-  "extract_dir": "discordo-main.zip",
+  "extract_dir": "main.zip",
   "depends": [
       "main/go"
   ],
