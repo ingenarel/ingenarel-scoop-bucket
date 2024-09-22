@@ -12,8 +12,7 @@
   ],
   "pre_install": [
     "cd $dir",
-    "go build .",
-    "Move-Item discordo.exe discordo-git.exe"
+    "go build ."
   ],
   "bin": [
     "discordo.exe"
