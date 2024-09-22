@@ -16,6 +16,6 @@
     "Move-Item discordo.exe discordo-git.exe"
   ],
   "bin": [
-    "discordo.exe"
+    "discordo-git.exe"
   ]
 }
