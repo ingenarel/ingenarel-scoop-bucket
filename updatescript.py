@@ -4,8 +4,8 @@ def github_project_latest_commit_hash_check(name_and_repo:str) -> str:
     github_project_latest_commit_url = f"https://api.github.com/repos/{name_and_repo}/commits"
     return requests.get(github_project_latest_commit_url).json()[0]["sha"]
 
-def github_project_latest_zip_hash_check(name_and_repo:str, commit_hash:str) -> str:
-    github_project_latest_zip_hash_url = f"https://github.com/{name_and_repo}/archive/{commit_hash}.zip"
+def github_project_latest_zip_hash_check(name_and_repo:str) -> str:
+    github_project_latest_zip_hash_url = f"https://github.com/{name_and_repo}/archive/refs/heads/main.zip"
     hash_obj = hashlib.new('sha256')
     with requests.get(github_project_latest_zip_hash_url, stream=True) as response:
         for chunk in response.iter_content(chunk_size=8192):
@@ -51,8 +51,9 @@ def main():
         manifest_commit_hash = read_github_project_commit_hash(package)
         if last_commit_hash != manifest_commit_hash:
             write_github_project_commit_hash(package, last_commit_hash)
-            manifest_zip_hash = read_github_project_zip_hash(package)
-            last_zip_hash = github_project_latest_zip_hash_check(project, last_commit_hash)
+
+            last_zip_hash = github_project_latest_zip_hash_check(project)
+            # manifest_zip_hash = read_github_project_zip_hash(package)
         # if last_zip_hash != manifest_zip_hash:
             write_github_project_zip_hash(package, last_zip_hash)
 
