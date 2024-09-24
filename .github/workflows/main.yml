@@ -1,0 +1,32 @@
+name: Scoop Bucket Updater
+
+on:
+  schedule:
+    - cron: '0 */4 * * *' # Runs every 6 hours at minute 0
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  update-bucket:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Checkout the repository
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    # Step 3: Install dependencies (requests, if necessary)
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests
+
+    # Step 4: Run the Python script
+    - name: Run Scoop Bucket Updater Script
+      run: |
+        python your-script.py
