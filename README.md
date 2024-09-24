@@ -1,3 +1,5 @@
+### the git versions of packages uses github's workflow to autoupdate. if you encounter a hash error, you can do `--skip-hash-check` or wait for sometime. the automatic workflow runs every 4 hours. (if i do more frequent than that i have a chance of finishing up my monthly workflow run time limit)
+
 bucket list:
 1. [sheepit-autoupdater](https://www.sheepit-renderfarm.com/getstarted)
     - version: 7.24244.0
