@@ -7,4 +7,4 @@ bucket list:
     - when installing this, if you see a gradle build error, saying java is not on path or something, it's a known bug with scoop, make sure your JAVA_HOME enviroment variable is set to the full path. and it should fix it.
     - version: 8a51cb1dadb3e76b27eebecf232e87cda8dbe32f
 4. [discordo-git](https://github.com/ayn2op/discordo)
-    - version: 0baadff87089f97ab69aed5d116a7e83381dd741
+    - version: on autoupdate. check the [manifest](https://github.com/ingenarel/ingenarel-scoop-bucket/blob/master/bucket/discordo-git.json) to get the current commit hash version.
