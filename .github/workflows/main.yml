@@ -29,4 +29,4 @@ jobs:
     # Step 4: Run the Python script
     - name: Run Scoop Bucket Updater Script
       run: |
-        python your-script.py
+        python updatescript.py
