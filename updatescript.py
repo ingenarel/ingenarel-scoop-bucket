@@ -1,4 +1,4 @@
-import requests, hashlib, json, re
+import requests, hashlib, json
 
 def github_project_latest_commit_hash_check(name_and_repo:str) -> str:
     github_project_latest_commit_url = f"https://api.github.com/repos/{name_and_repo}/commits"
