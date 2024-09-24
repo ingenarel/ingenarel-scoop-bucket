@@ -1,6 +1,1 @@
-*.sublime-workspace
-*~
-._*
-page.html
-checkver-*.html
-bucket\app-name.json.template
+test
