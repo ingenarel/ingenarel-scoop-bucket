@@ -59,6 +59,11 @@ def main():
             "package_name": "discordo-git",
             "branch": "main"
         },
+        {
+            "name_and_repo": "jesseduffield/lazygit",
+            "package_name": "lazygit-git",
+            "branch": "master"
+        },
     )
 
     for projectdata in list_of_github_projects:
@@ -73,7 +78,7 @@ def main():
 
             last_zip_hash = github_project_latest_zip_hash_check(project, branch)
             # manifest_zip_hash = read_project_zip_hash(package)
-            # if last_zip_hash != manifest_zip_hash:
+        # if last_zip_hash != manifest_zip_hash:
             write_project_zip_hash(package, last_zip_hash)
 
     list_of_gitlab_projects = (
