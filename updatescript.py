@@ -64,6 +64,11 @@ def main():
             "package_name": "lazygit-git",
             "branch": "master"
         },
+        {
+            "name_and_repo": "ajeetdsouza/zoxide",
+            "package_name": "zoxide-git",
+            "branch": "main"
+        },
     )
 
     for projectdata in list_of_github_projects:
