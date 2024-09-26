@@ -14,3 +14,5 @@ bucket list:
 5. [discordo-git](https://github.com/ayn2op/discordo)    ![Scoop Version](https://img.shields.io/scoop/v/discordo-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
 
 6. [lazygit-git](https://github.com/jesseduffield/lazygit)    ![Scoop Version](https://img.shields.io/scoop/v/lazygit-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
+
+7. [zoxide-git](https://github.com/ajeetdsouza/zoxide)    ![Scoop Version](https://img.shields.io/scoop/v/zoxide-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
