@@ -12,3 +12,5 @@ bucket list:
     - when installing this, if you see a gradle build error, saying java is not on path or something, it's a known bug with scoop, make sure your JAVA_HOME enviroment variable is set to the full path. and it should fix it.
 
 5. [discordo-git](https://github.com/ayn2op/discordo)    ![Scoop Version](https://img.shields.io/scoop/v/discordo-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
+
+6. [lazygit-git](https://github.com/jesseduffield/lazygit)    ![Scoop Version](https://img.shields.io/scoop/v/lazygit-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
