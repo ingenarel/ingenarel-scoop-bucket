@@ -72,7 +72,7 @@ def main():
             write_project_commit_hash(package, last_commit_hash)
 
             last_zip_hash = github_project_latest_zip_hash_check(project, branch)
-            manifest_zip_hash = read_project_zip_hash(package)
+            # manifest_zip_hash = read_project_zip_hash(package)
             # if last_zip_hash != manifest_zip_hash:
             write_project_zip_hash(package, last_zip_hash)
 
