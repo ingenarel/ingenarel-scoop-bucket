@@ -1,4 +1,4 @@
-### the git versions of packages uses github's workflow to autoupdate. if you encounter a hash error, you can do `--skip-hash-check` or wait for sometime. the automatic workflow runs every 4 hours. (if i do more frequent than that i have a chance of finishing up my monthly workflow run time limit)
+### the git versions of packages uses github's workflow to autoupdate. if you encounter a hash error, you can do `--skip-hash-check` or wait for sometime. the automatic workflow runs every hour.
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ingenarel/ingenarel-scoop-bucket/main.yml?style=for-the-badge&logo=githubactions&logoColor=ff0000&label=update%20checks&labelColor=000000)
 
 
