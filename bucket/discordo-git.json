@@ -16,7 +16,7 @@
         "go build ."
     ],
     "bin": [
-        "discordo-git.exe"
+        "discordo.exe"
     ],
     "conflicts": [
         "vvxrtues/discordo"
