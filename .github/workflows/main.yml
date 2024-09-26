@@ -2,7 +2,7 @@ name: Scoop Bucket Updater
 
 on:
   schedule:
-    - cron: '0 */4 * * *' # Runs every 6 hours at minute 0
+    - cron: '0 * * * *' # Runs every hour at minute 0
   workflow_dispatch: # Manual trigger
 
 jobs:
