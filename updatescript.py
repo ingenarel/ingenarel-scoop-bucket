@@ -69,6 +69,11 @@ def main():
             "package_name": "zoxide-git",
             "branch": "main"
         },
+        {
+            "name_and_repo": "junegunn/fzf",
+            "package_name": "fzf-git",
+            "branch": "master"
+        },
     )
 
     for projectdata in list_of_github_projects:
