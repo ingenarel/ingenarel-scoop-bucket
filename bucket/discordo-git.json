@@ -13,7 +13,7 @@
     "pre_install": [
         "scoop uninstall discordo",
         "cd $dir",
-        "go build . GO_LDFLAGS='-s -w'"
+        "GO_LDFLAGS=\"-s -w\" ^&^& go build ."
     ],
     "bin": [
         "discordo.exe"
