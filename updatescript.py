@@ -75,7 +75,7 @@ def main():
             "branch": "master"
         },
         {
-            "name_and_repo": "",
+            "name_and_repo": "cli/cli",
             "package_name": "gh-git",
             "branch": "trunk"
         },
