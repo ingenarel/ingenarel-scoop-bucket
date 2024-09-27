@@ -74,6 +74,11 @@ def main():
             "package_name": "fzf-git",
             "branch": "master"
         },
+        {
+            "name_and_repo": "",
+            "package_name": "gh-git",
+            "branch": "trunk"
+        },
     )
 
     for projectdata in list_of_github_projects:

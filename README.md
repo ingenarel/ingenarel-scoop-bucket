@@ -19,3 +19,5 @@ bucket list:
     - when installing this, you need to make sure that you have the windows sdk, and msvc build tools, you can install them by going to [this link](https://visualstudio.microsoft.com/visual-cpp-build-tools/), then either install full c++ dev guide, or you can also do a minimal install (still like 2-3 gigs or something), by selecting "individual components", then selecting windows sdk, and msvc build tools(the latest version should be the best)
 
 8. [fzf-git](https://github.com/junegunn/fzf)    ![Scoop Version](https://img.shields.io/scoop/v/fzf-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
+
+9. [gh-git](https://github.com/cli/cli)    ![Scoop Version](https://img.shields.io/scoop/v/gh-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
