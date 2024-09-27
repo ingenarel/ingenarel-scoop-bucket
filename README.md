@@ -21,3 +21,7 @@ bucket list:
 8. [fzf-git](https://github.com/junegunn/fzf)    ![Scoop Version](https://img.shields.io/scoop/v/fzf-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
 
 9. [gh-git](https://github.com/cli/cli)    ![Scoop Version](https://img.shields.io/scoop/v/gh-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
+
+this repo was made out of frustration. i personally used arch linux and i love it with all my life. I'm a big fan of the aur, and it's git repos, but it's been a while since i was able to use arch because of some wifi driver issues. (i'm really broke, can't buy another wifi adapter), so i've been stuck on windows for a few days. I got bored eventually, so i thought, why not package your own -git packages?
+
+Am i trying to AUR-eify scoop? yes. Will I succed? maybe not. but it's fun anyways.
