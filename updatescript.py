@@ -57,27 +57,32 @@ def main():
         {
             "name_and_repo": "ayn2op/discordo",
             "package_name": "discordo-git",
-            "branch": "main"
+            "branch": "main",
         },
         {
             "name_and_repo": "jesseduffield/lazygit",
             "package_name": "lazygit-git",
-            "branch": "master"
+            "branch": "master",
         },
         {
             "name_and_repo": "ajeetdsouza/zoxide",
             "package_name": "zoxide-git",
-            "branch": "main"
+            "branch": "main",
         },
         {
             "name_and_repo": "junegunn/fzf",
             "package_name": "fzf-git",
-            "branch": "master"
+            "branch": "master",
         },
         {
             "name_and_repo": "cli/cli",
             "package_name": "gh-git",
-            "branch": "trunk"
+            "branch": "trunk",
+        },
+        {
+            "name_and_repo": "BurntSushi/ripgrep",
+            "package_name": "ripgrep-git",
+            "branch": "master",
         },
     )
 

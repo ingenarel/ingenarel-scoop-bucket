@@ -24,6 +24,10 @@ bucket list:
 
 9. [glab-git](https://gitlab.com/gitlab-org/cli)    ![Scoop Version](https://img.shields.io/scoop/v/glab-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
 
+10. [ripgrep-git](https://github.com/BurntSushi/ripgrep)    ![Scoop Version](https://img.shields.io/scoop/v/ripgrep-git?bucket=https%3A%2F%2Fgithub.com%2Fingenarel%2Fingenarel-scoop-bucket&label=version)
+    - when installing this, you need to make sure that you have the windows sdk, and msvc build tools, you can install them by going to [this link](https://visualstudio.microsoft.com/visual-cpp-build-tools/), then either install full c++ dev guide, or you can also do a minimal install (still like 2-3 gigs or something), by selecting "individual components", then selecting windows sdk, and msvc build tools(the latest version should be the best)
+
+
 this repo was made out of frustration. i personally used arch linux and i love it with all my life. I'm a big fan of the aur, and it's git repos, but it's been a while since i was able to use arch because of some wifi driver issues. (i'm really broke, can't buy another wifi adapter), so i've been stuck on windows for a few days. I got bored eventually, so i thought, why not package your own -git packages?
 
 Am i trying to AUR-eify scoop? yes. Will I succed? maybe not. but it's fun anyways.
