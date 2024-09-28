@@ -103,6 +103,12 @@ def main():
             "branch":"master",
             "project_name": "client",
         },
+        {
+            "projectid":"34675721",
+            "package_name": "glab-git",
+            "branch":"main",
+            "project_name": "cli",
+        },
     )
 
     for projectdata in list_of_gitlab_projects:
