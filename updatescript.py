@@ -156,29 +156,6 @@ def main():
         ),
     }
     git_project_check_and_fix(list_of_git_projects=list_of_git_projects)
-    # for projectdata in list_of_git_projects["gitlab"]:
-    #     projectid = projectdata["projectid"]
-    #     package = projectdata["package_name"]
-    #     branch = projectdata["branch"]
-    #     project_name = projectdata["project_name"]
-    #
-    #     last_commit_hash = git_project_latest_commit_hash_check(
-    #         name_and_repo=projectid,
-    #         provider="gitlab",
-    #         project_id=projectid,
-    #     )
-    #     manifest_commit_hash, manifest_zip_hash = read_project_commit_and_zip_hash(package)
-    #     if last_commit_hash != manifest_commit_hash:
-    #         write_project_commit_hash(package, last_commit_hash)
-    #
-    #         last_zip_hash = git_project_latest_zip_hash_check(
-    #             name_and_repo=projectid,
-    #             branch=branch,
-    #             provider="gitlab",
-    #             project_name=project_name,
-    #         )
-    #         if last_zip_hash != manifest_zip_hash:
-    #             write_project_zip_hash(package, last_zip_hash)
-    #
+
 if __name__ == "__main__":
     main()
