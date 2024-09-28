@@ -1,10 +1,14 @@
 import requests, hashlib, json
 
 def git_project_latest_commit_hash_check(
-    name_and_repo:str,
     provider:str,
+    name_and_repo=None,
     project_id=None
     ) -> str:
+    # print(provider)
+    # print(name_and_repo)
+    # print(project_id)
+    # print()
     """
     This checks a git project and returns the latest commit hash.
     the name_and_repo is for the name and the repo.
@@ -12,8 +16,10 @@ def git_project_latest_commit_hash_check(
     if the provider is gitlab, you need to give the project_id.
     """
     provider = provider.strip().lower()
-    if provider == "github":
+    if provider == "github" and name_and_repo != None:
         return requests.get(f"https://api.github.com/repos/{name_and_repo}/commits").json()[0]["sha"]
+    elif provider == "github" and name_and_repo == None:
+        raise Exception("provider was github but name_and_repo was not provided")
     elif provider == "gitlab" and project_id != None:
         return requests.get(f"https://gitlab.com/api/v4/projects/{project_id}/repository/commits").json()[0]["id"]
     elif provider == "gitlab" and project_id == None:
@@ -76,23 +82,28 @@ def write_project_zip_hash(package_name:str, zip_hash:str):
     print(f"{package_name} zip hash changed to {zip_hash}")
 
 def git_project_check_and_fix(list_of_git_projects:dict) -> None:
-    for provider in list_of_git_projects:
-        for projectdata in list_of_git_projects[provider]:
-            if provider == "github":
+    for provider_name in list_of_git_projects:
+        # print(provider)
+        for projectdata in list_of_git_projects[provider_name]:
+            print(projectdata)
+            if provider_name == "github":
                 git_project = projectdata["name_and_repo"]
                 project_name = None
-            elif provider == "gitlab":
-                git_project == projectdata["projectid"]
+            elif provider_name == "gitlab":
+                git_project = projectdata["projectid"]
                 project_name = projectdata["project_name"]
             else:
-                raise NotImplementedError(f"given a git provider \"{provider}\" that isn't supported")
+                raise NotImplementedError(f"given a git provider \"{provider_name}\" that isn't supported")
+            # print(git_project)
             package = projectdata["package_name"]
             branch = projectdata["branch"]
 
             last_commit_hash = git_project_latest_commit_hash_check(
-                name_and_repo=git_project,
-                provider="github",
+                provider=provider_name,
+                name_and_repo=git_project if provider_name == "github" else None,
+                project_id=git_project if provider_name == "gitlab" else None,
             )
+            # print(f"{provider} | {git_project} commit hash: {last_commit_hash}")
             manifest_commit_hash, manifest_zip_hash = read_project_commit_and_zip_hash(package)
             if last_commit_hash != manifest_commit_hash:
                 write_project_commit_hash(package, last_commit_hash)
@@ -100,8 +111,7 @@ def git_project_check_and_fix(list_of_git_projects:dict) -> None:
                 last_zip_hash = git_project_latest_zip_hash_check(
                     name_and_repo=git_project,
                     branch=branch,
-                    provider="github",
-                    project_name=project_name
+                    provider=provider,
                 )
                 if last_zip_hash != manifest_zip_hash:
                     write_project_zip_hash(package, last_zip_hash)
