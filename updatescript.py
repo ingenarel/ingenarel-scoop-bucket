@@ -1,12 +1,21 @@
 import requests, hashlib, json
 
-def github_project_latest_commit_hash_check(name_and_repo:str) -> str:
-    github_project_latest_commit_url = f"https://api.github.com/repos/{name_and_repo}/commits"
-    return requests.get(github_project_latest_commit_url).json()[0]["sha"]
-
-def gitlab_project_latest_commit_hash_check(project_id:str) -> str:
-    gitlab_project_latest_commit_url = f"https://gitlab.com/api/v4/projects/{project_id}/repository/commits"
-    return requests.get(gitlab_project_latest_commit_url).json()[0]["id"]
+def git_project_latest_commit_hash_check(
+    name_and_repo:str,
+    provider:str,
+    project_id=None
+    ) -> str:
+    """
+    This checks a git project and returns the latest commit hash.
+    the name_and_repo is for the name and the repo.
+    the provider is a git hosting provider, it currently supports github, and gitlab
+    if the provider is gitlab, you need to give the project_id.
+    """
+    provider = provider.strip().lower()
+    if provider == "github":
+        return requests.get(f"https://api.github.com/repos/{name_and_repo}/commits").json()[0]["sha"]
+    elif provider == "gitlab":
+        return requests.get(f"https://gitlab.com/api/v4/projects/{project_id}/repository/commits").json()[0]["id"]
 
 def github_project_latest_zip_hash_check(name_and_repo:str, branch:str) -> str:
     github_project_latest_zip_hash_url = f"https://github.com/{name_and_repo}/archive/refs/heads/{branch}.zip"
@@ -91,7 +100,7 @@ def main():
         package = projectdata["package_name"]
         branch = projectdata["branch"]
 
-        last_commit_hash = github_project_latest_commit_hash_check(project)
+        last_commit_hash = git_project_latest_commit_hash_check(project, "github")
         manifest_commit_hash = read_project_commit_hash(package)
         if last_commit_hash != manifest_commit_hash:
             write_project_commit_hash(package, last_commit_hash)
@@ -122,7 +131,7 @@ def main():
         branch = projectdata["branch"]
         project_name = projectdata["project_name"]
 
-        last_commit_hash = gitlab_project_latest_commit_hash_check(projectid)
+        last_commit_hash = git_project_latest_commit_hash_check(projectid, "gitlab", projectid)
         manifest_commit_hash = read_project_commit_hash(package)
         if last_commit_hash != manifest_commit_hash:
             write_project_commit_hash(package, last_commit_hash)
