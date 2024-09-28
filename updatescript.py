@@ -17,7 +17,10 @@ def git_project_latest_commit_hash_check(
     """
     provider = provider.strip().lower()
     if provider == "github" and name_and_repo != None:
-        return requests.get(f"https://api.github.com/repos/{name_and_repo}/commits").json()[0]["sha"]
+        try:
+            return requests.get(f"https://api.github.com/repos/{name_and_repo}/commits").json()[0]["sha"]
+        except:
+            pass
     elif provider == "github" and name_and_repo == None:
         raise Exception("provider was github but name_and_repo was not provided")
     elif provider == "gitlab" and project_id != None:
@@ -88,10 +91,10 @@ def git_project_check_and_fix(list_of_git_projects:dict) -> None:
             # print(projectdata)
             if provider_name == "github":
                 git_project = projectdata["name_and_repo"]
-                project_name = None
+                projectname = None
             elif provider_name == "gitlab":
                 git_project = projectdata["projectid"]
-                project_name = projectdata["project_name"]
+                projectname = projectdata["project_name"]
             else:
                 raise NotImplementedError(f"given a git provider \"{provider_name}\" that isn't supported")
             # print(git_project)
@@ -108,11 +111,12 @@ def git_project_check_and_fix(list_of_git_projects:dict) -> None:
             if last_commit_hash != manifest_commit_hash:
                 write_project_commit_hash(package, last_commit_hash)
 
+                # print(projectname)
                 last_zip_hash = git_project_latest_zip_hash_check(
                     name_and_repo=git_project,
                     branch=branch,
                     provider=provider_name,
-                    project_name=project_name
+                    project_name=projectname
                 )
                 if last_zip_hash != manifest_zip_hash:
                     write_project_zip_hash(package, last_zip_hash)
