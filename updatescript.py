@@ -100,8 +100,8 @@ def git_project_check_and_fix(list_of_git_projects:dict) -> None:
 
             last_commit_hash = git_project_latest_commit_hash_check(
                 provider=provider_name,
-                name_and_repo=git_project if provider_name == "github" else None,
-                project_id=git_project if provider_name == "gitlab" else None,
+                name_and_repo=git_project,
+                project_id=git_project,
             )
             # print(f"{provider_name} | {git_project} commit hash: {last_commit_hash}")
             manifest_commit_hash, manifest_zip_hash = read_project_commit_and_zip_hash(package)
@@ -112,6 +112,7 @@ def git_project_check_and_fix(list_of_git_projects:dict) -> None:
                     name_and_repo=git_project,
                     branch=branch,
                     provider=provider_name,
+                    project_name=project_name
                 )
                 if last_zip_hash != manifest_zip_hash:
                     write_project_zip_hash(package, last_zip_hash)
