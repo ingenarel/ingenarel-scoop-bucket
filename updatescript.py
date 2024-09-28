@@ -17,23 +17,36 @@ def git_project_latest_commit_hash_check(
     elif provider == "gitlab":
         return requests.get(f"https://gitlab.com/api/v4/projects/{project_id}/repository/commits").json()[0]["id"]
 
-def github_project_latest_zip_hash_check(name_and_repo:str, branch:str) -> str:
-    github_project_latest_zip_hash_url = f"https://github.com/{name_and_repo}/archive/refs/heads/{branch}.zip"
+def git_project_latest_zip_hash_check(
+        name_and_repo:str,
+        branch:str,
+        provider:str,
+        project_name=None
+    ) -> str:
+    """
+    This checks a git project and returns the latest git repo's zip file's hash.
+    The provider is a git hosting provider. it currently supports github and gitlab.
+    if it's something else, it raises a NotImplementedError.
+    the branch is the branch it should check,
+    the the provider is github, then the name_and_repo is the project owner's name and the repo name.
+    if the provider is gitlab, then the name_and_repo is the project id,
+    and you would also need to provide the package_name variable, which is the repo name.
+    """
+    if provider == "github":
+        git_project_latest_zip_hash_url = f"https://github.com/{name_and_repo}/archive/refs/heads/{branch}.zip"
+    elif provider == "gitlab":
+        git_project_latest_zip_hash_url = f"https://gitlab.com/{name_and_repo}/-/archive/{branch}/heads/{project_name}-{branch}.zip"
+    else:
+        raise NotImplementedError
+    
+    # chatgpt written code starts here
     hash_obj = hashlib.new('sha256')
-    with requests.get(github_project_latest_zip_hash_url, stream=True) as response:
+    with requests.get(git_project_latest_zip_hash_url, stream=True) as response:
         for chunk in response.iter_content(chunk_size=8192):
             if chunk:
                 hash_obj.update(chunk)
     return hash_obj.hexdigest()
-
-def gitlab_project_latest_zip_hash_check(name_and_repo:str, branch:str, project_name:str) -> str:
-    github_project_latest_zip_hash_url = f"https://gitlab.com/{name_and_repo}/-/archive/{branch}/heads/{project_name}-{branch}.zip"
-    hash_obj = hashlib.new('sha256')
-    with requests.get(github_project_latest_zip_hash_url, stream=True) as response:
-        for chunk in response.iter_content(chunk_size=8192):
-            if chunk:
-                hash_obj.update(chunk)
-    return hash_obj.hexdigest()
+    # chatgpt written code ends here
 
 def read_project_commit_hash(package_name:str) -> str:
     with open(f'bucket/{package_name}.json', 'r') as manifest:
@@ -100,12 +113,19 @@ def main():
         package = projectdata["package_name"]
         branch = projectdata["branch"]
 
-        last_commit_hash = git_project_latest_commit_hash_check(project, "github")
+        last_commit_hash = git_project_latest_commit_hash_check(
+            name_and_repo=project,
+            provider="github",
+        )
         manifest_commit_hash = read_project_commit_hash(package)
         if last_commit_hash != manifest_commit_hash:
             write_project_commit_hash(package, last_commit_hash)
 
-            last_zip_hash = github_project_latest_zip_hash_check(project, branch)
+            last_zip_hash = git_project_latest_zip_hash_check(
+                name_and_repo=project,
+                branch=branch,
+                provider="github",
+            )
             # manifest_zip_hash = read_project_zip_hash(package)
         # if last_zip_hash != manifest_zip_hash:
             write_project_zip_hash(package, last_zip_hash)
@@ -131,12 +151,21 @@ def main():
         branch = projectdata["branch"]
         project_name = projectdata["project_name"]
 
-        last_commit_hash = git_project_latest_commit_hash_check(projectid, "gitlab", projectid)
+        last_commit_hash = git_project_latest_commit_hash_check(
+            name_and_repo=projectid,
+            provider="gitlab",
+            project_id=projectid,
+        )
         manifest_commit_hash = read_project_commit_hash(package)
         if last_commit_hash != manifest_commit_hash:
             write_project_commit_hash(package, last_commit_hash)
 
-            last_zip_hash = gitlab_project_latest_zip_hash_check(projectid, branch, project_name)
+            last_zip_hash = git_project_latest_zip_hash_check(
+                name_and_repo=projectid,
+                branch=branch,
+                provider="gitlab",
+                project_name=project_name,
+            )
             # manifest_zip_hash = read_project_zip_hash(package)
         # if last_zip_hash != manifest_zip_hash:
             write_project_zip_hash(package, last_zip_hash)
