@@ -17,10 +17,7 @@ def git_project_latest_commit_hash_check(
     """
     provider = provider.strip().lower()
     if provider == "github" and name_and_repo != None:
-        try:
-            return requests.get(f"https://api.github.com/repos/{name_and_repo}/commits").json()[0]["sha"]
-        except:
-            pass
+        return requests.get(f"https://api.github.com/repos/{name_and_repo}/commits").json()[0]["sha"]
     elif provider == "github" and name_and_repo == None:
         raise Exception("provider was github but name_and_repo was not provided")
     elif provider == "gitlab" and project_id != None:
