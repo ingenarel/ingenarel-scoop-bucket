@@ -61,6 +61,13 @@ def git_project_latest_zip_hash_check(
     # chatgpt written code ends here
 
 def read_project_commit_and_zip_hash(package_name:str) -> tuple:
+    """
+    this reads the manifest and return the commit hash and zip file's hash.
+    package_name should be the manifest name. it should not contain the the .json extension or bucket/
+    it returns a tuple.
+    the first item from the tuple is the version, aka, the commit hash.
+    the second item from the tuple is the zip file's hash.
+    """
     with open(f'bucket/{package_name}.json', 'r') as manifest:
         data = json.load(manifest)
     return (data["version"], data["hash"])
