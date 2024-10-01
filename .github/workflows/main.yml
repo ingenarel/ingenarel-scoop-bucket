@@ -60,5 +60,3 @@ jobs:
     - name: Push changes to GitLab
       run: |
         git push gitlab master
-            git commit -m "Automated bucket update" || echo "No changes to commit"
-            git push
