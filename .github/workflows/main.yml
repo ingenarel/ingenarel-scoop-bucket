@@ -48,7 +48,7 @@ jobs:
     - name: Commit and push changes to GitHub
       run: |
         git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/ingenarel/ingenarel-scoop-bucket.git
-        git pull --no-rebase gitlab master
+        git pull --rebase --allow-unrelated-histories gitlab master
         git add .
         git commit -m "Automated bucket update" || echo "No changes to commit"
         git push origin master
