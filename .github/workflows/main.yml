@@ -50,9 +50,7 @@ jobs:
         git add .
         git commit -m "Automated bucket update" || echo "No changes to commit"
         git push
-            - name: Gitlab Sync
-      # You may pin to the exact commit or the version.
-      # uses: action-pack/gitlab-sync@38077a591a7f2ceb6ff6026e6beb2954a3be0f93
+        
     - name: Gitlab Sync
       uses: action-pack/gitlab-sync@v3
       with:
