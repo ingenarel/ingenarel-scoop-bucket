@@ -51,4 +51,5 @@ jobs:
         git commit -m "Automated bucket update" || echo "No changes to commit"
         git push origin master
         git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/ingenarel/ingenarel-scoop-bucket.git
+        git fetch gitlab master --unshallow || echo "Could not fetch full history, proceeding with push anyway."
         git push gitlab master --force
