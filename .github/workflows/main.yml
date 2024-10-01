@@ -30,22 +30,35 @@ jobs:
     - name: Run Scoop Bucket Updater Script
       run: |
         python updatescript.py
-
-    # Step 5: Configure Git
-    - name: Configure Git
+    
+    
+    # Step 5: Configure Git for GitHub
+    - name: Configure Git for GitHub
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
-
+    
     # Step 6: Check for changes
     - name: Check for changes
       run: |
         git status
         git diff
-
-    # Step 7: Commit and push changes if there are any
-    - name: Commit and push changes
+    
+    # Step 7: Commit and push changes to GitHub
+    - name: Commit and push changes to GitHub
       run: |
         git add .
         git commit -m "Automated bucket update" || echo "No changes to commit"
-        git push
+        git push origin main
+    
+    # Step 8: Configure GitLab credentials
+    - name: Configure GitLab remote
+      run: |
+        git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/ingenarel/ingenarel-scoop-bucket.git
+    
+    # Step 9: Push changes to GitLab
+    - name: Push changes to GitLab
+      run: |
+        git push gitlab main
+            git commit -m "Automated bucket update" || echo "No changes to commit"
+            git push
