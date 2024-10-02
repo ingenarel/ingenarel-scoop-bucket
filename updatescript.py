@@ -116,14 +116,14 @@ def git_project_check_and_fix(list_of_git_projects:dict) -> None:
                 write_project_commit_hash(package, last_commit_hash)
 
                 # print(projectname)
-                last_zip_hash = git_project_latest_zip_hash_check(
-                    name_and_repo=git_project,
-                    branch=branch,
-                    provider=provider_name,
-                    project_name=projectname
-                )
-                if last_zip_hash != manifest_zip_hash:
-                    write_project_zip_hash(package, last_zip_hash)
+            last_zip_hash = git_project_latest_zip_hash_check(
+                name_and_repo=git_project,
+                branch=branch,
+                provider=provider_name,
+                project_name=projectname
+            )
+            if last_zip_hash != manifest_zip_hash:
+                write_project_zip_hash(package, last_zip_hash)
 
 def main():
     list_of_git_projects = {
