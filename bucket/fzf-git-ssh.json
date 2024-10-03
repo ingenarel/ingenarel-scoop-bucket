@@ -12,11 +12,11 @@
     ],
     "pre_install": [
         "echo '' 'trying to uninstall conflicts'",
-        "scoop uninstall fzf fzf-git-ssh",
-        "cd ~/scoop/apps/fzf-git",
+        "scoop uninstall fzf fzf-git",
+        "cd ~/scoop/apps/fzf-git-ssh",
         "git clone --depth 1 --branch master https://github.com/junegunn/fzf",
-        "echo 'building fzf'",
         "cd fzf",
+        "echo 'building fzf'",
         "go build -ldflags '-s -w' ."
     ],
     "bin": [
@@ -24,6 +24,6 @@
     ],
     "conflicts": [
         "fzf",
-        "fzf-git-ssh"
+        "fzf-git"
     ]
 }
