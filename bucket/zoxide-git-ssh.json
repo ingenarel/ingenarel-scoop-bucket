@@ -14,7 +14,7 @@
         "echo '' 'trying to uninstall conflicts'",
         "scoop uninstall zoxide zoxide-git",
         "cd ~/scoop/apps/zoxide-git-ssh",
-        "git clone --depth 1 --branch master git@github.com:ajeetdsouza/zoxide.git",
+        "git clone --depth 1 --branch main git@github.com:ajeetdsouza/zoxide.git",
         "echo 'building zoxide...' ''",
         "cd zoxide",
         "cargo build --release --locked"
