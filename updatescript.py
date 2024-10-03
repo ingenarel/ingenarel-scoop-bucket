@@ -46,11 +46,17 @@ def write_project_commit_hash(package_name:str, commit_hash:str):
     print(f"{package_name} commit hash changed to {commit_hash}")
 
     try:
+        with open(f'bucket/{package_name}-ssh.json', 'r') as manifest:
+            data = json.load(manifest)
+        data["version"] = commit_hash
+    except FileNotFoundError:
+        # print(f"{package_name}-ssh not found!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        pass
+    else:
         with open(f"bucket/{package_name}-ssh.json", "w") as manifest:
             manifest.write(json.dumps(data, indent=4))
         print(f"{package_name}-ssh commit hash changed to {commit_hash}")
-    except FileNotFoundError:
-        print(f"{package_name}-ssh not found!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
 
 def git_project_check_and_fix(list_of_git_projects:dict) -> None:
     for provider_name in list_of_git_projects:
