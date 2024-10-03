@@ -12,9 +12,9 @@
     ],
     "pre_install": [
         "echo '' 'trying to uninstall conflicts'",
-        "scoop uninstall ripgrep ripgrep-git-ssh",
-        "cd ~/scoop/apps/ripgrep-git",
-        "git clone --depth 1 --branch master https://github.com/BurntSushi/ripgrep.git",
+        "scoop uninstall ripgrep ripgrep-git",
+        "cd ~/scoop/apps/ripgrep-git-ssh",
+        "git clone --depth 1 --branch master git@github.com:BurntSushi/ripgrep.git",
         "cd ripgrep",
         "cargo build --release --locked"
     ],
@@ -23,6 +23,6 @@
     ],
     "conflicts": [
         "ripgrep",
-        "ripgrep-git-ssh"
+        "ripgrep-git"
     ]
 }
