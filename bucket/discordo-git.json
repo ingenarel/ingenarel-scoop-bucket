@@ -14,7 +14,7 @@
         "echo '' 'trying to uninstall conflicts'",
         "scoop uninstall discordo discordo-git-ssh",
         "cd ~/scoop/apps/discordo-git",
-        "git clone https://github.com/ayn2op/discordo.git",
+        "git clone --depth 1 --branch main https://github.com/ayn2op/discordo.git",
         "go build -ldflags '-s -w' ."
     ],
     "bin": [
