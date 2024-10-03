@@ -3,16 +3,16 @@
     "description": "A smarter cd command. Supports all major shells. (git version uses https cloning)",
     "license": "MIT license",
     "homepage": "https://github.com/ajeetdsouza/zoxide",
-    "notes": "This is the git version.\nUses https cloning.\nGo to https://github.com/shunsambongi/clink-zoxide if you want to see how to set up the z and zi aliases in cmd, clink is also needed for that\nAnd fzf is also needed to use the zi command",
+    "notes": "This is the git version.\nUses ssh cloning.\nGo to https://github.com/shunsambongi/clink-zoxide if you want to see how to set up the z and zi aliases in cmd, clink is also needed for that\nAnd fzf is also needed to use the zi command",
     "depends": [
         "rustup-msvc",
-        "git"
+        ""
     ],
     "pre_install": [
         "echo '' 'trying to uninstall conflicts'",
         "scoop uninstall zoxide zoxide-git-ssh",
         "cd ~/scoop/apps/zoxide-git",
-        "git clone --depth 1 --branch master https://github.com/ajeetdsouza/zoxide.git",
+        "git clone --depth 1 --branch master git@github.com:ajeetdsouza/zoxide.git",
         "echo 'building zoxide...' ''",
         "cd zoxide",
         "cargo build --release --locked"
