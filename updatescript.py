@@ -45,6 +45,13 @@ def write_project_commit_hash(package_name:str, commit_hash:str):
         manifest.write(json.dumps(data, indent=4))
     print(f"{package_name} commit hash changed to {commit_hash}")
 
+    try:
+        with open(f"bucket/{package_name}-ssh.json", "w") as manifest:
+            manifest.write(json.dumps(data, indent=4))
+        print(f"{package_name}-ssh commit hash changed to {commit_hash}")
+    except FileNotFoundError:
+        print(f"{package_name}-ssh not found!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
 def git_project_check_and_fix(list_of_git_projects:dict) -> None:
     for provider_name in list_of_git_projects:
         # print(provider_name)
@@ -103,6 +110,10 @@ def main():
                 "projectid":"20825969",
                 "package_name": "sheepit-git",
             },
+            # {
+            #     "projectid":"34675721",
+            #     "package_name": "glab-git-ssh",
+            # },
             {
                 "projectid":"34675721",
                 "package_name": "glab-git",
