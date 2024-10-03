@@ -8,7 +8,7 @@
     "hash": "159bf09babfa63914e51fc50a4eabdf2d80c638768021961138e2c477ea66f79",
     "depends": [
         "rustup-msvc",
-        ""
+        "git"
     ],
     "pre_install": [
         "echo '' 'trying to uninstall conflicts'",
