@@ -12,8 +12,8 @@
     ],
     "pre_install": [
         "echo '' 'trying to uninstall conflicts'",
-        "scoop uninstall zoxide zoxide-git-ssh",
-        "cd ~/scoop/apps/zoxide-git",
+        "scoop uninstall zoxide zoxide-git",
+        "cd ~/scoop/apps/zoxide-git-ssh",
         "git clone --depth 1 --branch master git@github.com:ajeetdsouza/zoxide.git",
         "echo 'building zoxide...' ''",
         "cd zoxide",
