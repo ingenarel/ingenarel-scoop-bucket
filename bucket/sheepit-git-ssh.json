@@ -1,6 +1,6 @@
 {
     "version": "8a51cb1dadb3e76b27eebecf232e87cda8dbe32f",
-    "description": "SheepIt is a free distributed renderfarm for Blender (git https clone)",
+    "description": "SheepIt is a free distributed renderfarm for Blender (git ssh clone)",
     "license": "GNU General Public License",
     "homepage": "https://gitlab.com/sheepitrenderfarm/client",
     "notes": "To run this, just type sheepit-git in the terminal",
@@ -13,9 +13,9 @@
     ],
     "pre_install": [
         "echo '' 'trying to uninstall conflicts'",
-        "scoop uninstall sheepit-git-ssh",
+        "scoop uninstall sheepit-git",
         "cd $dir",
-        "git clone --depth 1 --branch master https://gitlab.com/sheepitrenderfarm/client.git",
+        "git clone --depth 1 --branch master git@gitlab.com:sheepitrenderfarm/client.git",
         "echo 'building sheepit...' ''",
         "cd client",
         "gradle shadowJar",
@@ -25,6 +25,6 @@
         "build/libs/sheepit-git.jar"
     ],
     "conflicts": [
-        "sheepit-git-ssh"
+        "sheepit-git"
     ]
 }
