@@ -87,6 +87,10 @@ def main():
     list_of_git_projects = {
         "github": (
             {
+                "name_and_repo": "SpacingBat3/WebCord",
+                "package_name": "webcord-git",
+            },
+            {
                 "name_and_repo": "ayn2op/discordo",
                 "package_name": "discordo-git",
             },
@@ -116,10 +120,6 @@ def main():
                 "projectid":"20825969",
                 "package_name": "sheepit-git",
             },
-            # {
-            #     "projectid":"34675721",
-            #     "package_name": "glab-git-ssh",
-            # },
             {
                 "projectid":"34675721",
                 "package_name": "glab-git",
