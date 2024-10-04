@@ -1,0 +1,29 @@
+{
+    "version": "",
+    "description": "(git https clone)",
+    "license": " license",
+    "homepage": "",
+    "notes": "",
+    "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy",
+    "hash": "159bf09babfa63914e51fc50a4eabdf2d80c638768021961138e2c477ea66f79",
+    "depends": [
+        "git",
+        ""
+    ],
+    "pre_install": [
+        "echo '' 'trying to uninstall conflicts'",
+        "scoop uninstall",
+        "cd $dir",
+        "git clone --depth 1 --branch",
+        "echo 'building ...' ''",
+        "cd ",
+        ""
+    ],
+    "bin": [
+        ""
+    ],
+    "conflicts": [
+        "",
+        "-ssh"
+    ]
+}
