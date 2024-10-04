@@ -19,8 +19,10 @@
         "echo 'building glab...' ''",
         "cd cli",
         "make build",
-        "cd bin",
-        "Move-Item glab glab.exe"
+        "cd $dir",
+        "Move-Item cli/bin/glab glab.exe",
+        "Remove-Item -Recurse -Force .\cli",
+        "Remove-Item decoy"
     ],
     "bin": [
         "glab.exe"
