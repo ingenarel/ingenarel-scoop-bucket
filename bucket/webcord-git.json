@@ -25,7 +25,7 @@
         "Remove-Item decoy"
     ],
     "bin": [
-        "out/devel/WebCord-win32-x64/webcord.exe"
+        "WebCord-win32-x64/webcord.exe"
     ],
     "conflicts": [
         "webcord",
