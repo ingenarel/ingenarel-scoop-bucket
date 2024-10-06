@@ -33,7 +33,7 @@ def read_project_commit_hash(package_name:str) -> str:
     package_name should be the manifest name. it should not contain the the .json extension or bucket/
     It returns the commit hash.
     """
-    with open(f'bucket/{package_name}.json', 'r') as manifest:
+    with open(f'bucket/{package_name}-git.json', 'r') as manifest:
         data = json.load(manifest)
     return data["version"]
 
