@@ -49,8 +49,6 @@ jobs:
     # Step 7: pull push
     - name: Commit and push changes to GitHub
       run: |
-        git add .
-        git commit -m "Automated bucket update" || echo "No changes to commit"
         git push
         
     - name: Gitlab Sync

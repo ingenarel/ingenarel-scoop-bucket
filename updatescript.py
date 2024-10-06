@@ -1,4 +1,4 @@
-import requests, json
+import requests, json, os
 
 def git_project_latest_commit_hash_check(
     provider:str,
@@ -41,21 +41,19 @@ def write_project_commit_hash(package_name:str, commit_hash:str):
     with open(f'bucket/{package_name}.json', 'r') as manifest:
         data = json.load(manifest)
     data["version"] = commit_hash
-    with open(f"bucket/{package_name}.json", "w") as manifest:
+    with open(f"bucket/{package_name}-git.json", "w") as manifest:
         manifest.write(json.dumps(data, indent=4))
     print(f"{package_name} commit hash changed to {commit_hash}")
 
-    try:
-        with open(f'bucket/{package_name}-ssh.json', 'r') as manifest:
-            data = json.load(manifest)
-        data["version"] = commit_hash
-    except FileNotFoundError:
-        # print(f"{package_name}-ssh not found!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        pass
-    else:
-        with open(f"bucket/{package_name}-ssh.json", "w") as manifest:
-            manifest.write(json.dumps(data, indent=4))
-        print(f"{package_name}-ssh commit hash changed to {commit_hash}")
+    os.system(f"git commit -a -m '{package_name}-git commit hash changed to {commit_hash}'")
+
+    with open(f'bucket/{package_name}-git-ssh.json', 'r') as manifest:
+        data = json.load(manifest)
+    data["version"] = commit_hash
+    with open(f"bucket/{package_name}-ssh.json", "w") as manifest:
+        manifest.write(json.dumps(data, indent=4))
+    print(f"{package_name}-ssh commit hash changed to {commit_hash}")
+    os.system(f"git commit -a -m '{package_name}-git-ssh commit hash changed to {commit_hash}'")
 
 
 def git_project_check_and_fix(list_of_git_projects:dict) -> None:
@@ -88,41 +86,45 @@ def main():
         "github": (
             {
                 "name_and_repo": "SpacingBat3/WebCord",
-                "package_name": "webcord-git",
+                "package_name": "webcord",
             },
             {
                 "name_and_repo": "ayn2op/discordo",
-                "package_name": "discordo-git",
+                "package_name": "discordo",
             },
             {
                 "name_and_repo": "jesseduffield/lazygit",
-                "package_name": "lazygit-git",
+                "package_name": "lazygit",
             },
             {
                 "name_and_repo": "ajeetdsouza/zoxide",
-                "package_name": "zoxide-git",
+                "package_name": "zoxide",
             },
             {
                 "name_and_repo": "junegunn/fzf",
-                "package_name": "fzf-git",
+                "package_name": "fzf",
             },
             {
                 "name_and_repo": "cli/cli",
-                "package_name": "gh-git",
+                "package_name": "gh",
             },
             {
                 "name_and_repo": "BurntSushi/ripgrep",
-                "package_name": "ripgrep-git",
+                "package_name": "ripgrep",
+            },
+            {
+                "name_and_repo": "Vencord/Vesktop",
+                "package_name": "vesktop",
             },
         ),
         "gitlab": (
             {
                 "projectid":"20825969",
-                "package_name": "sheepit-git",
+                "package_name": "sheepit",
             },
             {
                 "projectid":"34675721",
-                "package_name": "glab-git",
+                "package_name": "glab",
             },
         ),
     }
