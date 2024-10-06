@@ -22,29 +22,28 @@ jobs:
       with:
         python-version: '3.x'
 
-    # Step 3: Install dependencies (requests, if necessary)
+    Step 3: Install dependencies (requests, if necessary)
     - name: Install Python dependencies
       run: |
         python -m pip install --upgrade pip
         pip install requests
-
-    # Step 4: Run the Python script
-    - name: Run Scoop Bucket Updater Script
-      run: |
-        python updatescript.py
-    
-    
+   
     # Step 5: Configure Git for GitHub
     - name: Configure Git for GitHub
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
+ 
+    # Step 6: Run the Python script
+    - name: Run Scoop Bucket Updater Script
+      run: |
+        python updatescript.py
     
     # Step 6: Check for changes
-    - name: Check for changes
-      run: |
-        git status
-        git diff
+    # - name: Check for changes
+      # run: |
+        # git status
+        # git diff
     
     # Step 7: pull push
     - name: Commit and push changes to GitHub
