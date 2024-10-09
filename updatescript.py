@@ -52,8 +52,8 @@ def write_project_commit_hash(package_name:str, commit_hash:str):
         manifest.write(json.dumps(data, indent=4))
 
     print(f"{package_name}-ssh commit hash changed to {commit_hash}")
-    os.system(f"git add bucket/{package_name}-git.json bucket/{package_name}-git-ssh.json'")
-    os.system(f"git commit -m '{package_name} updated to {commit_hash}'")
+    os.system(f"git add bucket/{package_name}-git.json bucket/{package_name}-git-ssh.json")
+    os.system(f"git commit -m \"{package_name} updated to {commit_hash}\"")
 
 
 def git_project_check_and_fix(list_of_git_projects:dict) -> None:
