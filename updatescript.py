@@ -53,7 +53,7 @@ def update_project(package_name: str, commit_hash: str):
 
     # chatgpt generated code starts here
     hash_obj = hashlib.new("sha256")
-    with open("decoy/{package_name}-decoy", "rb") as file:
+    with open(f"decoy/{package_name}-decoy", "rb") as file:
         chunk_size = 4096
         while chunk := file.read(chunk_size):
             hash_obj.update(chunk)
