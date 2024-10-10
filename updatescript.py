@@ -1,5 +1,6 @@
 import requests, json, hashlib, os, random
 
+
 def git_project_latest_commit_hash_check(
     provider: str,
     name_and_repo: str = "",
@@ -31,29 +32,33 @@ def git_project_latest_commit_hash_check(
     else:
         raise NotImplementedError(f"this function doesn't support {provider}")
 
-def read_project_commit_hash(package_name:str) -> tuple:
+
+def read_project_commit_hash(package_name: str) -> tuple:
     """
     this reads the manifest and return the commit hash and zip file's hash.
     package_name should be the manifest name. it should not contain the the .json extension or bucket/
     it returns a tuple.
     the first item from the tuple is the version, aka, the commit hash.
     """
-    with open(f'bucket/{package_name}-git.json', 'r') as manifest:
+    with open(f"bucket/{package_name}-git.json", "r") as manifest:
         data = json.load(manifest)
-    return (data["version"])
+    return data["version"]
 
-def update_project(package_name: str, commit_hash:str):
+
+def update_project(package_name: str, commit_hash: str):
     with open(f"decoy/{package_name}-decoy", "w") as decoy:
-        decoy.write(f"This is a decoy file\nIt should not be touched\nRandom bytes to register a scoop update:\n{random.randbytes(100)}\n")
+        decoy.write(
+            f"This is a decoy file\nIt should not be touched\nRandom bytes to register a scoop update:\n{random.randbytes(100)}\n"
+        )
 
     # chatgpt generated code starts here
     hash_obj = hashlib.new("sha256")
-    with open('decoy/{package_name}-decoy', 'rb') as file:
+    with open("decoy/{package_name}-decoy", "rb") as file:
         chunk_size = 4096
         while chunk := file.read(chunk_size):
             hash_obj.update(chunk)
-    
-    file_hash = hash_obj.hexdigest()   
+
+    file_hash = hash_obj.hexdigest()
     # chatgpt generated code ends here
 
     with open(f"bucket/{package_name}-git.json", "r") as manifest:
@@ -77,6 +82,7 @@ def update_project(package_name: str, commit_hash:str):
         f"git add bucket/{package_name}-git.json bucket/{package_name}-git-ssh.json decoy/{package_name}-decoy"
     )
     os.system(f'git commit -m "{package_name} updated to {commit_hash}"')
+
 
 def git_project_check_and_fix(list_of_git_projects) -> None:
     random_bytes = {random.randbytes(100)}
@@ -106,6 +112,7 @@ def git_project_check_and_fix(list_of_git_projects) -> None:
                 update_project(package, last_commit_hash)
 
                 # print(projectname)
+
 
 def main():
     list_of_git_projects = {
@@ -155,6 +162,7 @@ def main():
         ),
     }
     git_project_check_and_fix(list_of_git_projects=list_of_git_projects)
+
 
 if __name__ == "__main__":
     main()
