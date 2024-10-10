@@ -4,7 +4,7 @@
     "license": "MIT license",
     "homepage": "https://github.com/SpacingBat3/WebCord",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/webcord-decoy",
-    "hash": "c43b03b5c0345010d8e955d443bded0eb6f4160e59ea5bcf939eb9981a919f73",
+    "hash": "be71235e94b36c19bf39a225c705707369908c1f0d2365fa0ece86596738e9e4",
     "depends": [
         "git",
         "nodejs"
