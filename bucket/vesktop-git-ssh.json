@@ -4,7 +4,7 @@
     "license": "GPL-3.0 license",
     "homepage": "https://github.com/Vencord/Vesktop",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/vesktop-decoy",
-    "hash": "f85fc2abf2a1f7fb1ca260998a9970fc7d3502dda238e318ab504d0d8587cc9f",
+    "hash": "f4b2598c9cbb1fbd94c23b31b407108cd7890d4f40e49a776775419dd7b38496",
     "depends": [
         "git",
         "nodejs"
