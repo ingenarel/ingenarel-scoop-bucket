@@ -5,7 +5,7 @@
     "homepage": "https://github.com/ajeetdsouza/zoxide",
     "notes": "Type zoxide to start.\nIf you want o setup the z and zi aliases, look at zoxide's readme.\nGo to https://github.com/shunsambongi/clink-zoxide if you want to see how to set up the z and zi aliases in cmd, clink is also needed for that\nAnd fzf is also needed to use the zi command",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/zoxide-decoy",
-    "hash": "a837d3405be83300fe5a3eec3a2fbff0d99fc029b392842242e57053185719f0",
+    "hash": "7f967eb36e8c5a7f39885e67e1abf8721821548b75b9d4beba35632809fa685c",
     "depends": [
         "rustup-msvc",
         "git"
