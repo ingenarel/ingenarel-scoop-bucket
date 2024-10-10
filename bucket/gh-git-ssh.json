@@ -5,7 +5,7 @@
     "homepage": "https://github.com/cli/cli",
     "notes": "Type gh to start",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/gh-decoy",
-    "hash": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/gh-decoy",
+    "hash": "a0e8afcc25430c56b5b4d8bb1b171176c040e3e2208045a8253e55a0e7eae43e",
     "depends": [
         "go",
         "git"

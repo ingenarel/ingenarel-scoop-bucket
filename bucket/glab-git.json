@@ -5,7 +5,7 @@
     "homepage": "https://gitlab.com/gitlab-org/cli",
     "notes": "Type glab to start.\nTo not authenticate via your glab token everytime, set an enviroment variable called \"GITLAB_TOKEN\" and set it to your gitlab token.",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/glab-decoy",
-    "hash": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/glab-decoy",
+    "hash": "df94c2e7e23cdee599ea25a896a0a71ba7b70019d2b6adb6c105c229734fd045",
     "depends": [
         "git",
         "go",

@@ -5,7 +5,7 @@
     "homepage": "https://github.com/jesseduffield/lazygit",
     "notes": "Type lazygit to start\nIt can also be used in neovim by using floatterm or the lazygit wrapper",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/lazygit-decoy",
-    "hash": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/lazygit-decoy",
+    "hash": "454bb0c6d8fad8ed36c891511765c29245e9dc4b36012ba0b9b5bb9bdffdf256",
     "depends": [
         "go",
         "git"
