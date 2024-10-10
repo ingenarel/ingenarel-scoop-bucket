@@ -5,7 +5,7 @@
     "homepage": "https://github.com/ayn2op/discordo",
     "notes": "Type discordo to start",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/discordo-decoy",
-    "hash": "a4a1e3132a53cec84da16cf61a7b0656e36983daf8b8a2753b25ce1377d0d77f",
+    "hash": "cea960e3d25ba8e21c7c33dff78a532b02d3cda10ea56fbf4da0e24a4cb6357d",
     "depends": [
         "go",
         "git"
