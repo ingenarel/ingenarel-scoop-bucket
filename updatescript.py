@@ -45,12 +45,16 @@ def read_project_commit_hash(package_name: str) -> tuple:
     return data["version"]
 
 
-def update_project(package_name: str, commit_hash: str):
+def update_decoy(package_name: str) -> None:
     with open(f"decoy/{package_name}-decoy", "w") as decoy:
         decoy.write(
             f"This is a decoy file\nIt should not be touched\nRandom bytes to register a scoop update:\n{random.randbytes(100)}\n"
         )
+    os.system(f'git commit decoy/{package_name}-decoy -m "{package_name}-decoy update"')
+    os.system("git push")
 
+
+def get_hash():
     # chatgpt generated code starts here
     hash_obj = hashlib.new("sha256")
     with open(f"decoy/{package_name}-decoy", "rb") as file:
@@ -61,6 +65,8 @@ def update_project(package_name: str, commit_hash: str):
     file_hash = hash_obj.hexdigest()
     # chatgpt generated code ends here
 
+
+def update_project(package_name: str, commit_hash: str) -> None:
     with open(f"bucket/{package_name}-git.json", "r") as manifest:
         data = json.load(manifest)
     data["version"] = commit_hash
@@ -79,13 +85,12 @@ def update_project(package_name: str, commit_hash: str):
     print(f"{package_name}-ssh commit hash changed to {commit_hash}")
 
     os.system(
-        f"git add bucket/{package_name}-git.json bucket/{package_name}-git-ssh.json decoy/{package_name}-decoy"
+        f"git add bucket/{package_name}-git.json bucket/{package_name}-git-ssh.json"
     )
     os.system(f'git commit -m "{package_name} updated to {commit_hash}"')
 
 
 def git_project_check_and_fix(list_of_git_projects) -> None:
-    random_bytes = {random.randbytes(100)}
     for provider_name in list_of_git_projects:
         # print(provider_name)
         for projectdata in list_of_git_projects[provider_name]:
