@@ -55,7 +55,10 @@ def update_decoy_and_get_hash(package_name: str) -> str:
 
     # chatgpt generated code structure starts here
     hash_obj = hashlib.new("sha256")
-    with requests.get(f"https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/{package_name}-decoy", stream=True) as response:
+    with requests.get(
+        f"https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/{package_name}-decoy",
+        stream=True,
+    ) as response:
         for chunk in response.iter_content(chunk_size=8192):
             if chunk:
                 hash_obj.update(chunk)
@@ -79,8 +82,6 @@ def update_project(package_name: str, commit_hash: str) -> None:
     data["hash"] = file_hash
     with open(f"bucket/{package_name}-git-ssh.json", "w") as manifest:
         manifest.write(json.dumps(data, indent=4))
-
-    print(f"{package_name}-ssh commit hash changed to {commit_hash}")
 
     os.system(
         f"git add bucket/{package_name}-git.json bucket/{package_name}-git-ssh.json"
