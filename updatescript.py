@@ -45,7 +45,7 @@ def read_project_commit_hash(package_name: str) -> tuple:
     return data["version"]
 
 
-def update_decoy(package_name: str) -> None:
+def update_decoy_and_get_hash(package_name: str) -> str:
     with open(f"decoy/{package_name}-decoy", "w") as decoy:
         decoy.write(
             f"This is a decoy file\nIt should not be touched\nRandom bytes to register a scoop update:\n{random.randbytes(100)}\n"
@@ -53,20 +53,18 @@ def update_decoy(package_name: str) -> None:
     os.system(f'git commit decoy/{package_name}-decoy -m "{package_name}-decoy update"')
     os.system("git push")
 
-
-def get_hash():
-    # chatgpt generated code starts here
+    # chatgpt generated code structure starts here
     hash_obj = hashlib.new("sha256")
-    with open(f"decoy/{package_name}-decoy", "rb") as file:
-        chunk_size = 4096
-        while chunk := file.read(chunk_size):
-            hash_obj.update(chunk)
-
-    file_hash = hash_obj.hexdigest()
-    # chatgpt generated code ends here
+    with requests.get(f"https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/{package_name}-decoy", stream=True) as response:
+        for chunk in response.iter_content(chunk_size=8192):
+            if chunk:
+                hash_obj.update(chunk)
+    return hash_obj.hexdigest()
+    # chatgpt generated code structure ends here
 
 
 def update_project(package_name: str, commit_hash: str) -> None:
+    file_hash = update_decoy_and_get_hash(package_name)
     with open(f"bucket/{package_name}-git.json", "r") as manifest:
         data = json.load(manifest)
     data["version"] = commit_hash
