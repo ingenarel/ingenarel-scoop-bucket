@@ -51,12 +51,12 @@ jobs:
         git push
         
     - name: Gitlab Sync
-      uses: action-pack/gitlab-sync@v3
+      uses: kujov/gitlab-sync@2.0.0
       with:
         # GitLab repo URL
-        url: https://gitlab.com/ingenarel/ingenarel-scoop-bucket
+        gitlab_url: https://gitlab.com/ingenarel/ingenarel-scoop-bucket
         # GitLab username
         username: ingenarel
         # GitLab token
-        token: ${{ secrets.GITLAB_TOKEN }}
+        gitlab_pat: ${{ secrets.GITLAB_TOKEN }}
           
