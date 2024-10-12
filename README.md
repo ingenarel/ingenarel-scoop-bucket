@@ -22,6 +22,8 @@ the normal git packages are using https to clone. and the -git-ssh packages are 
 
 The git versions of packages uses github's workflow to autoupdate. I'm also using [this decoy file](https://github.com/ingenarel/ingenarel-scoop-bucket/blob/master/decoy) to get around scoop's hash check, so the hash check doesn't break every if there is a new commit in between the update checks. Whenever the file hash changes. The version check is done every hour. The commit hash version that you see might not always be up to date with the original lates commit hash, but that isn't a problem too much, it will always download the latest repo, because i don't use a download link, i do `git clone`, and if you need to update really badly in between the update checks, you can always do `scoop update packagename --force`
 
+incase a package isn't updating, i've tried everything i can to fix this stupid bug, but it's a [bug](https://github.com/ScoopInstaller/Scoop/issues/6184) with scoop itself
+
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/ingenarel/ingenarel-scoop-bucket/main.yml?style=for-the-badge&logo=githubactions&logoColor=ff0000&label=update%20checks&labelColor=000000)
 
