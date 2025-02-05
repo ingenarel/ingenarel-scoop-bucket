@@ -1,11 +1,11 @@
 {
-    "version": "79604f5192ac04625b9e1adb2d28da40687a3775",
+    "version": "5470b768f68f501f31c7ee59848cf21e4f60ea3a",
     "description": "A GitLab CLI tool bringing GitLab to your command line (git https clone)",
     "license": "MIT license",
     "homepage": "https://gitlab.com/gitlab-org/cli",
     "notes": "Type glab to start.\nTo not authenticate via your glab token everytime, set an enviroment variable called \"GITLAB_TOKEN\" and set it to your gitlab token.",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/glab-decoy",
-    "hash": "c98f892765d98dd9904005a207106af094952499790103e890f0f210da4970a8",
+    "hash": "b90f110feaea9d466bf323632fc64f5ebe3b0e89fdeebc735d561fcfc34425f5",
     "depends": [
         "git",
         "go",
