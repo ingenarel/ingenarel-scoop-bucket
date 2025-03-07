@@ -155,10 +155,10 @@ def main():
             },
         ),
         "gitlab": (
-            # {
-            #     "projectid": "20825969",
-            #     "package_name": "sheepit",
-            # },
+            {
+                "projectid": "20825969",
+                "package_name": "sheepit",
+            },
             {
                 "projectid": "34675721",
                 "package_name": "glab",
