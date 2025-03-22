@@ -1,11 +1,11 @@
 {
-    "version": "e9eb04991feaca224bae0234f82c12d5427b78a4",
+    "version": "1628535b5d5b9f378f886ce7d0c977ff0558af47",
     "description": "A lightweight, secure, and feature-rich Discord terminal client (git https clone)",
     "license": "MIT license",
     "homepage": "https://github.com/ayn2op/discordo",
     "notes": "Type discordo to start",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/discordo-decoy",
-    "hash": "534e37faba8a51310d5088f7fdf41bec04590a9a6d702984737072b4ead176ec",
+    "hash": "b6af187488b11b535713f9619416be972e08c7204caf1957fe1124d8d36dc4be",
     "depends": [
         "go",
         "git"
