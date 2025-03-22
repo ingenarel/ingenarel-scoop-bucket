@@ -1,11 +1,11 @@
 {
-    "version": "ab9f4af63698a50e3a321f0440190596273882e7",
+    "version": "a51bf126618851759fac4ad69cd40e99af80ef24",
     "description": "Simple terminal UI for git commands (git https clone)",
     "license": "MIT license",
     "homepage": "https://github.com/jesseduffield/lazygit",
     "notes": "Type lazygit to start\nIt can also be used in neovim by using floatterm or the lazygit wrapper",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/lazygit-decoy",
-    "hash": "9814c1d61f56a4eff9ae93c445eb99c99ab2a379d176a38368f8e7eb0bfeaa91",
+    "hash": "b84c4f6a379ef939609231c5142187c348dc1047508fb0a5b20db4056ac3700a",
     "depends": [
         "go",
         "git"
