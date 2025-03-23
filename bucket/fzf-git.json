@@ -1,11 +1,11 @@
 {
-    "version": "de0f2efbfb34b4545bde5cc64cf819c2e3be963e",
+    "version": "82fd88339b115f1159d66588191990d95fb41e88",
     "description": "\ud83c\udf38 A command-line fuzzy finder (git https clone)",
     "license": "MIT license",
     "homepage": "https://github.com/junegunn/fzf",
     "notes": "Type fzf to start",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/fzf-decoy",
-    "hash": "69916624e7c8ce107b0792fa94fdf1c5543c204c062935bb2613d5ae2047af00",
+    "hash": "de09803b4293c50d8048b02ae7fb31e44b32aa4cf1f98ad147c8e1b076a7c727",
     "depends": [
         "go",
         "git"
