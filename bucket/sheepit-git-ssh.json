@@ -1,11 +1,11 @@
 {
-    "version": "617e1c1a903b5d0c8a6daff06e6d0091fbb13192",
+    "version": "d0d2c99ba9aa3f5161cef3fc235046ad07dee67e",
     "description": "SheepIt is a free distributed renderfarm for Blender (git ssh clone)",
     "license": "GNU General Public License",
     "homepage": "https://gitlab.com/sheepitrenderfarm/client",
     "notes": "To run this, just type sheepit in the terminal",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/sheepit-decoy",
-    "hash": "80ff36b30d44f1b7837a34b9289d7b3d48c37e0745490bf620ed52017be7f672",
+    "hash": "ba87e3a8ee7c9390ea675a96b90df97660daa9f8c66b08dde5ffae7539be3ef1",
     "depends": [
         "openjdk11",
         "gradle-bin",
