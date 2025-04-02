@@ -1,10 +1,10 @@
 {
-    "version": "391ad94b85b73dff8ecb4a49f55e74bfeb488c0e",
+    "version": "3c87c89b3acb9ef76add1df94816edcf2eea391f",
     "description": "Vesktop is a custom Discord App aiming to give you better performance and improve linux support (git https clone)",
     "license": "GPL-3.0 license",
     "homepage": "https://github.com/Vencord/Vesktop",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/vesktop-decoy",
-    "hash": "6f824bdb2c0fd6772379aa986aaebdda8b4848d241c099e300a74a1bf8f38951",
+    "hash": "e85193d4a51ed9377b1e9d6978916f8e02f223492c8ed1d3a2d60fd906dcef94",
     "depends": [
         "git",
         "nodejs"
