@@ -1,11 +1,11 @@
 {
-    "version": "de4baa10024f2cb62d438596274b9b710e01c59b",
+    "version": "004370bd1619183b54dbaa41719728edfe892ac6",
     "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore (git https clone)",
     "license": "MIT license",
     "homepage": "https://github.com/BurntSushi/ripgrep",
     "notes": "Type rg to use it.",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/ripgrep-decoy",
-    "hash": "bdd0d6b8329945cee2b09e0e3d041c9c007d976b145876af04b5c068165e570c",
+    "hash": "0c10bcf243e1578bebfb95cb4e21382f116b0d3936435ef26f6f573f2d6ada4c",
     "depends": [
         "rustup-msvc",
         "git"
