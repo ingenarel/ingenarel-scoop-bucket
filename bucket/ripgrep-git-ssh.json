@@ -1,5 +1,5 @@
 {
-    "version": "004370bd1619183b54dbaa41719728edfe892ac6",
+    "version": "5fbc4fee64131b5cd14675be71e43768a9763553",
     "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore (git https clone)",
     "license": "MIT license",
     "homepage": "https://github.com/BurntSushi/ripgrep",
