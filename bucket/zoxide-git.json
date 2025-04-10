@@ -1,11 +1,11 @@
 {
-    "version": "b193a84eb0991728ebaf2b4b03c7bd27c2189bb2",
+    "version": "6902d375c5ef6caa4ad8f74034cb43b3ee27345f",
     "description": "A smarter cd command. Supports all major shells. (git https clone)",
     "license": "MIT license",
     "homepage": "https://github.com/ajeetdsouza/zoxide",
     "notes": "Type zoxide to start.\nIf you want o setup the z and zi aliases, look at zoxide's readme.\nGo to https://github.com/shunsambongi/clink-zoxide if you want to see how to set up the z and zi aliases in cmd, clink is also needed for that\nAnd fzf is also needed to use the zi command",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/zoxide-decoy",
-    "hash": "e2e9b62fbec2a7b23af82d6e54707be1713bea3a9f4f408250f45d0763c477e3",
+    "hash": "e078815978d0897c0db6551df636a4afb1c16372d7f4a949983f6799c6762e19",
     "depends": [
         "rustup-msvc",
         "git"
