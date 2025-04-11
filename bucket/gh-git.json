@@ -1,11 +1,11 @@
 {
-    "version": "057ad52fdb05032b8501f3dc2fc5dc174c4a86ae",
+    "version": "dec71dd9e122129b14987234dcc1c7ecac3bebfe",
     "description": "GitHub\u2019s official command line tool (git https clone)",
     "license": "MIT license",
     "homepage": "https://github.com/cli/cli",
     "notes": "Type gh to start",
     "url": "https://raw.githubusercontent.com/ingenarel/ingenarel-scoop-bucket/refs/heads/master/decoy/gh-decoy",
-    "hash": "74ff02fe4ef6fb0bdab06aaa300b35179dd02832f563b5f53662382fdebbd569",
+    "hash": "5dfe30dde66e82e26389b7d07da7cd8482fc79d334003a97821cea6260226074",
     "depends": [
         "go",
         "git"
